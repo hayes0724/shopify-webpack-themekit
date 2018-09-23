@@ -1,0 +1,17 @@
+development:
+  password: {{ Private App Password }}
+  theme_id: "{{ Dev Theme ID }}"
+  store: {{ Store Name}}
+  ignore_files:
+    - node_modules/
+    - _src/
+
+
+production:
+  password: {{ Private App Password }}
+  theme_id: "live"
+  store: {{ Store Name}}
+  ignore_files:
+    - node_modules/
+    - _src/
+

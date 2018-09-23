@@ -1,0 +1,11 @@
+/.idea
+/config.yml
+/theme.lock
+/node_modules/
+/package-lock.json
+/assets/compiled.css
+/assets/compiled.scss.liquid
+/assets/compiled.scss.liquid.map
+/assets/compiled.js
+/assets/main.css
+

@@ -1,16 +1,15 @@
 // Load data from shopifys config.yml
+var webpack = require('webpack');
 const read = require('read-yaml');
 const config = read.sync('config.yml');
 const themeID = config.development.theme_id;
 const storeURL = config.development.store;
+const browserSync = require('browser-sync');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
 // webpack build
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const extractSass = new ExtractTextPlugin({
-    filename: "compiled.scss.liquid",
-    disable: process.env.NODE_ENV === "development"
-});
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: './_src/js/app.js',
@@ -25,21 +24,26 @@ module.exports = {
         rules: [
             {
                 test: /\.(css|scss)$/,
-                use: extractSass.extract({
-                    use: [
+                use: [
                     {
-                        loader: "css-loader"
+                        loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader
                     },
                     {
-                        loader: "postcss-loader"
+                        loader: "postcss-loader",
+                        options: {
+                            ident: 'postcss',
+                            plugins: (loader) => [
+                                require('postcss-preset-env')(),
+                                require('cssnano')()
+                            ]
+                        }
                     },
                     {
-                        loader: "sass-loader"
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
                     }],
-
-                    // use style-loader in development
-                    fallback: "style-loader"
-                })
             },
             {
                 // Match woff2 and patterns like .woff?v=1.1yo.1.
@@ -56,12 +60,34 @@ module.exports = {
         ]
     },
     plugins: [
-        extractSass,
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
         new BrowserSyncPlugin({
-            host: storeURL,
+            //host: '127.0.0.1',
+            https: true,
             port: 3000,
-            proxy: storeURL + '?preview_theme_id=' + themeID,
+            proxy: 'https://' + storeURL + '?preview_theme_id=' + themeID,
             reloadDelay: 2000,
+            middleware: [
+                function (req, res, next) {
+                    // Shopify sites with redirection enabled for custom domains force redirection
+                    // to that domain. `?_fd=0` prevents that forwarding.
+                    // ?pb=0 hides the Shopify preview bar
+                    const prefix = req.url.indexOf('?') > -1 ? '&' : '?';
+                    const queryStringComponents = ['_fd=0&pb=0'];
+
+                    req.url += prefix + queryStringComponents.join('&');
+                    next();
+                }
+            ],
             files: [
                 {
                     match: [

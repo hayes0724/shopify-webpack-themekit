@@ -1,0 +1,39 @@
+{
+  "plugins": [
+    "stylelint-selector-bem-pattern",
+    "stylelint-scss",
+    "@namics/stylelint-bem"
+  ],
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-shopify",
+    "stylelint-prettier/recommended",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "color-no-hex": null,
+    "indentation": 2,
+    "max-nesting-depth": 2,
+    "max-empty-lines": 1,
+    "declaration-no-important": true,
+    "selector-class-pattern": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-type": null,
+    "no-empty-source": null,
+    "no-empty-first-line": true,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
+    },
+    "plugin/selector-bem-pattern": {
+      "preset": "bem",
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    }
+  }
+}

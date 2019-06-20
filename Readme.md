@@ -12,30 +12,33 @@ Requirements:
 theme configure --password=[your-password] --store=my-store.myshopify.com --themeid=123
 ````
 
+### Theme files
+```
+ {{ 'compiled.scss.css' | asset_url | stylesheet_tag }}
+ {{ 'compiled.js' | asset_url | script_tag }}
+```
+
 * npm install
 
-#### Setup Instructions - NPM build scripts
-All scripts are run in this format:
-````
-npm run [script-name]
-````
-To start work on a project:
-```
-npm run watch
-```
-another terminal
-```
-npm run theme-sync
-```
-* build - builds project one time
-* watch - builds project, then continues to watch for changes
-* theme-sync - starts the sync with shopify
-* theme-upload - uploads theme one time
-* theme-download - downloads theme one time
+## Commands
 
-### Notes
-1. *theme download* is useful if there are changes made in "customization"
-2. *theme upload* to manually upload changes. Mainly used for pushing to production
-3. *build* is good for one time build (getting production ready for upload)
-4. make sure to cancel theme sync/watch before switching branches or uploading manually
+Test - Runs all tests and code linters
+`npm run test`
+
+Lint CSS - Checks scss for errors and best practices.
+
+`` npm run lint:css``
+
+Lint JS - Checks js for errors and best practices.
+
+`` npm run lint:js``
+
+Fix CSS - Checks scss for errors and best practices. Automatically fixes simple errors like line endings
+
+`` npm run fix:css``
+
+Fix jS - Checks js for errors and best practices. Automatically fixes simple errors.
+
+`` npm run fix:js``
+
 

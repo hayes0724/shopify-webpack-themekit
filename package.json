@@ -9,7 +9,7 @@
     "theme-watch": "theme watch",
     "theme-deploy": "theme deploy",
     "theme-download": "theme download",
-    "theme-download:production": "theme download -e production"
+    "theme-download:production": "theme download -e production",
     "lint:css": "stylelint \"styles/**/*.scss\" --formatter verbose",
     "fix:css": "stylelint --fix \"styles/**/*.scss\" --formatter verbose",
     "lint:js": "eslint \"scripts/**/*.js\"",

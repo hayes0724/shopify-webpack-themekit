@@ -6,6 +6,7 @@ const themeID = config.development.theme_id;
 const storeURL = config.development.store;
 const browserSync = require('browser-sync');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const development = process.env.NODE_ENV !== 'production';
 
 // webpack build
 const path = require('path');
@@ -26,7 +27,10 @@ module.exports = {
                 test: /\.(css|scss)$/,
                 use: [
                     {
-                        loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader
+                        loader: development ? 'style-loader' : MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: 'css-loader', options: { sourceMap: development }
                     },
                     {
                         loader: "postcss-loader",
@@ -63,8 +67,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: "compiled.css",
+            chunkFilename: "[id].css",
+            hmr: development
         }),
         new webpack.ProvidePlugin({
             $: "jquery",

@@ -4,12 +4,12 @@
   "description": "shopify frontend bem/scss framework",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "webpack --watch",
-    "theme-watch": "theme watch",
-    "theme-deploy": "theme deploy",
-    "theme-download": "theme download",
-    "theme-download:production": "theme download -e production",
+    "theme:watch": "theme watch",
+    "theme:deploy": "theme deploy",
+    "theme:download": "theme download",
+    "theme:download:production": "theme download -e production",
     "lint:css": "stylelint \"styles/**/*.scss\" --formatter verbose",
     "fix:css": "stylelint --fix \"styles/**/*.scss\" --formatter verbose",
     "lint:js": "eslint \"scripts/**/*.js\"",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "jquery": "^3.4.1"
   },
   "devDependencies": {

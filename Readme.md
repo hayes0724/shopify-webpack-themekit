@@ -5,7 +5,7 @@
 3. [Theme files](#theme-files)
 4. [Commands](#commands)
 
-## Features
+### Features
 * Webpack 4
 * Stylelint
 * ESLint
@@ -23,16 +23,13 @@
 
 1. Install dependencies - `npm install`
 
-2. Start webpack compiler - `npm run watch`
-
-3. Watch files and upload to Shopify - `npm run theme:watch`
+2. Start webpack compiler - `npm run start`
 
 ## Deploying
 
-1. Build css/js using production settings `npm run build`
+Deploy theme - This runs build process then deploys theme to Shopify
 
-2. Deploy theme - `npm run theme:deploy`
-
+`npm run deploy`
 
 ## Theme files
 
@@ -44,6 +41,10 @@ If this is a new project you will need to add the compiled files to theme.liquid
 ```
 
 ## Commands
+
+Start - Watches files for changes and deploys changes to Shopify
+
+`npm run start`
 
 Build - Builds js/scss in production mode
 

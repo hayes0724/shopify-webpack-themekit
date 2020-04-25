@@ -1,12 +1,14 @@
 {
-  "name": "shopify-frontend",
+  "name": "shopify-webpack",
   "version": "2.0.0",
-  "description": "shopify frontend bem/scss framework",
+  "description": "shopify development tool using themekit and webpack",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "watch": "webpack --watch",
-    "theme:watch": "theme watch",
+    "start": "npm-run-all -p -r watch theme:sync",
+    "watch": "webpack --watch --mode development",
+    "deploy": "npm-run-all -p -r build theme:deploy",
+    "theme:sync": "theme watch",
     "theme:deploy": "theme deploy",
     "theme:download": "theme download",
     "theme:download:production": "theme download -e production",
@@ -16,7 +18,7 @@
     "fix:js": "eslint \"scripts/**/*.js\" --fix",
     "test": "stylelint --fix \"styles/**/*.scss\" && eslint \"scripts/**/*.js\""
   },
-  "author": "",
+  "author": "Eric Hayes",
   "license": "ISC",
   "dependencies": {
     "cross-env": "^7.0.2",
@@ -38,6 +40,7 @@
     "file-loader": "^4.3.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",

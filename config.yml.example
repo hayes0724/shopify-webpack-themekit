@@ -4,7 +4,7 @@ development:
   store: {{ Store Name}}
   ignore_files:
     - node_modules/
-    - _src/
+    - src/
 
 
 production:
@@ -13,5 +13,5 @@ production:
   store: {{ Store Name}}
   ignore_files:
     - node_modules/
-    - _src/
+    - src/
 

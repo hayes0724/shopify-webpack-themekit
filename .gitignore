@@ -8,4 +8,5 @@
 /assets/compiled.scss.liquid.map
 /assets/compiled.js
 /assets/main.css
-
+/src/
+/dist/

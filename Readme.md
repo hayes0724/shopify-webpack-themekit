@@ -11,7 +11,9 @@
 * ESLint
 * Babel
 * Middleware for Shopify preview
+* Webpack dev server for assets
 * BrowserSync
+* Chunks for templates and layouts
 
 ## Requirements
 
@@ -33,12 +35,18 @@ Deploy theme - This runs build process then deploys theme to Shopify
 
 ## Theme files
 
-If this is a new project you will need to add the compiled files to theme.liquid
+Webpack will create the following snippets that load all style and script chunks. You need to include this in your theme.liquid file.
 
 ```
- {{ 'compiled.css' | asset_url | stylesheet_tag }}
- {{ 'compiled.js' | asset_url | script_tag }}
+ {% include 'script-tags' %}
+ {% include 'style-tags' %}
 ```
+
+### Creating chunks
+
+The system will check for any script or style sheet that matches Shopify template and layout files.
+
+Example: 
 
 ## Commands
 

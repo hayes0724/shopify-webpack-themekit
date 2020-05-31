@@ -15,6 +15,7 @@ const getLayoutEntrypoints = require('./lib/utilities/get-layout-entrypoints');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const development = process.env.NODE_ENV !== 'production';
 
+
 module.exports = {
     entry: Object.assign(
         {},

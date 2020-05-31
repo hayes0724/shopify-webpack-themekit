@@ -41,7 +41,7 @@
         <% } %>
       <% } else if (typeof htmlWebpackPlugin.options.liquidLayouts[page] !== 'undefined') { %>
         <% conditions.push("layout == '" + page.split('.')[1] + "'") %>
-      <% } %>
+      <% } %>`
     <% }); %>
     {%- if <%= conditions.join(' or ') %> -%}
       <link type="text/css" href="<%= src %>" rel="stylesheet">

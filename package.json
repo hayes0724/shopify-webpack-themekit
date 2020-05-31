@@ -4,7 +4,8 @@
   "description": "shopify development tool using themekit and webpack",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build": "cross-env NODE_ENV=development webpack --mode development --config lib/webpack/dev.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --mode production --config lib/webpack/prod.config.js",
     "start": "npm-run-all -p -r watch theme:sync",
     "watch": "webpack --watch --mode development",
     "deploy": "npm-run-all -p -r build theme:deploy",
@@ -21,7 +22,8 @@
   "author": "Eric Hayes",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@namics/stylelint-bem": "^6.3.0",
@@ -34,6 +36,7 @@
     "babel-preset-shopify": "^20.1.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^2.1.1",
@@ -59,6 +62,7 @@
     "stylelint-scss": "^3.16.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.3.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",

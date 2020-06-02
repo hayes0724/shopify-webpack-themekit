@@ -17,7 +17,8 @@
     "fix:css": "stylelint --fix \"styles/**/*.scss\" --formatter verbose",
     "lint:js": "eslint \"scripts/**/*.js\"",
     "fix:js": "eslint \"scripts/**/*.js\" --fix",
-    "test": "stylelint --fix \"styles/**/*.scss\" && eslint \"scripts/**/*.js\""
+    "test": "stylelint --fix \"styles/**/*.scss\" && eslint \"scripts/**/*.js\"",
+    "hello": "node ./lib/cli/commands/start.js"
   },
   "author": "Eric Hayes",
   "license": "ISC",
@@ -28,6 +29,9 @@
   "devDependencies": {
     "@namics/stylelint-bem": "^6.3.0",
     "@shopify/babel-preset": "^23.0.0",
+    "@shopify/slate-env": "latest",
+    "@shopify/themekit": "latest",
+    "array-flatten": "^3.0.0",
     "autoprefixer": "^9.7.5",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
@@ -36,9 +40,11 @@
     "babel-preset-shopify": "^20.1.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "chalk": "latest",
     "clean-webpack-plugin": "^3.0.0",
     "concat-style-loader": "^1.0.0-beta.14",
     "copy-webpack-plugin": "^5.1.1",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "crypto": "^1.0.1",
     "css-loader": "^2.1.1",
@@ -47,11 +53,16 @@
     "eslint-plugin-shopify": "^28.0.0",
     "extract-loader": "^5.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "figures": "latest",
     "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^7.1.0",
+    "ip": "^1.1.5",
     "mini-css-extract-plugin": "^0.7.0",
+    "minimatch": "^3.0.4",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
+    "ora": "^4.0.4",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
@@ -66,6 +77,7 @@
     "stylelint-scss": "^3.16.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "tapable": "latest",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.3.0",
     "webpack": "^4.42.1",
@@ -73,6 +85,7 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "yargs": "^15.3.1"
   }
 }

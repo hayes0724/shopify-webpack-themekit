@@ -10,3 +10,6 @@
 /assets/main.css
 /src/
 /dist/
+/.env
+/config.json
+/lib/config.js

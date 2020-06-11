@@ -992,19 +992,6 @@
     babel-plugin-react-test-id "^1.0.2"
     babel-plugin-transform-inline-environment-variables "^0.4.3"
 
-"@shopify/slate-config@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-config/-/slate-config-1.0.0-beta.14.tgz#06cb79dea564fd3acf4c4b9b219e587c4b8b299d"
-  integrity sha512-4Z+O36MhI16Obg0ecBVihenIsx5HAfYfTtflARRWLR5a5QSLazbpmaiHFg23PB2ELTxBdXvP2iOtoHqmT7uaKA==
-
-"@shopify/slate-env@latest":
-  version "1.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-env/-/slate-env-1.0.0-beta.16.tgz#aeb9a60f598dfc5f7e1ae7b69e20e642a60196a8"
-  integrity sha512-IVMa1UdK1ArXaS23xKfihPmtLIp7ZJTV9JQEfbHusNSyT/v5PblS5lYsbwYfEdYKK9axpQoGQmVeN95o4U2dgQ==
-  dependencies:
-    "@shopify/slate-config" "1.0.0-beta.14"
-    dotenv "^4.0.0"
-
 "@shopify/themekit@latest":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@shopify/themekit/-/themekit-1.1.4.tgz#4e34dc3f88987233dad2191969c498d5f469fe8a"
@@ -4214,11 +4201,6 @@ dot-prop@^5.2.0:
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
   dependencies:
     is-obj "^2.0.0"
-
-dotenv@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
-  integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
 
 download@^7.1.0:
   version "7.1.0"

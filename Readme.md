@@ -17,19 +17,13 @@
 
 ## Requirements
 
-* Have [theme kit](https://shopify.github.io/themekit/) installed globally (run auto install once per computer)
-
-* Create [config.yml](https://shopify.github.io/themekit/#configure-an-existing-theme)
+* Create config.js (see example.config.js)
 
 ## Getting Started
 
 1. Install dependencies - `npm install`
 
 2. Start webpack compiler - `npm run start`
-
-## Deploying
-
-Deploy theme - This runs build process then deploys theme to Shopify
 
 `npm run deploy`
 
@@ -45,14 +39,30 @@ Webpack will create the following snippets that load all style and script chunks
 ### Creating chunks
 
 The system will check for any script or style sheet that matches Shopify template and layout files.
+ 
+filename: `scripts/templates/product.js`
 
-Example: 
+creates file: `assets/template.product.js`
+
+script-tags snippet (auto generated) will only load this script on pages that use product template
+
+```html
+{%- if template == 'product' -%}
+<script type="text/javascript" src="{{ 'template.product.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.js' | asset_url }}" as="script">
+{%- endif -%}
+```
 
 ## Commands
 
-Start - Watches files for changes and deploys changes to Shopify
+Start - Watches files for changes and deploys changes to Shopify. Also builds and deploys all theme files to Shopify before starting
 
 `npm run start`
+
+Watch - Watches files for changes and deploys changes to Shopify. Skips first deployment.
+
+`npm run watch`
 
 Build - Builds js/scss in production mode
 

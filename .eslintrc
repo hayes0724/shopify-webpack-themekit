@@ -1,6 +1,7 @@
 {
   "extends": [
-    "plugin:shopify/esnext"
+    "plugin:shopify/esnext",
+    "prettier"
   ],
   "env": {
     "jest": true
@@ -12,7 +13,8 @@
     "no-alert": 0,
     "no-console": 0,
     "no-new": 0,
-    "node/shebang": 0
+    "node/shebang": 0,
+    "no-process-env": 0
   },
   "globals": {
     "document": true,

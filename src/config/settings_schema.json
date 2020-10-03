@@ -1,0 +1,10 @@
+[
+  {
+    "name": "packer-blank-theme",
+    "theme_name": "Packer blank theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Eric Hayes",
+    "theme_documentation_url": "https://github.com/hayes0724/packer-blank-theme",
+    "theme_support_url": "https://github.com/hayes0724/packer-blank-theme/issues"
+  }
+]

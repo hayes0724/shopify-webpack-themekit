@@ -1,6 +1,6 @@
 {
   "name": "shopify-webpack",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "shopify development tool using themekit and webpack",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,9 @@
     "lazysizes": "^5.2.2"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "@namics/stylelint-bem": "^6.3.0",
     "@shopify/babel-preset": "^23.0.0",
     "@shopify/themekit": "latest",

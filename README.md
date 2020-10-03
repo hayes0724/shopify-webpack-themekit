@@ -1,4 +1,14 @@
 ## Shopify ThemeKit - Webpack
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hayes0724/shopify-webpack-themekit)
+[![GitHub issues](https://img.shields.io/github/issues/hayes0724/shopify-webpack-themekit.svg)](https://GitHub.com/hayes0724/shopify-webpack-themekit/issues/)
+[![GitHub license](https://img.shields.io/github/license/hayes0724/shopify-webpack-themekit.svg)](https://github.com/hayes0724/shopify-webpack-themekit/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/hayes0724/shopify-webpack-themekit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/hayes0724/shopify-webpack-themekit/stargazers/)
+[![GitHub forks](https://img.shields.io/github/forks/hayes0724/shopify-webpack-themekit.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/hayes0724/shopify-webpack-themekit/network/)
+
+
+Development tool for Shopify using webpack and themekit.
+
+Check out the node package version: [Shopify Packer](https://github.com/hayes0724/shopify-packer)
 
 1. [Requirements](#requirements)
 2. [Getting Started](#getting-started)
@@ -6,6 +16,7 @@
 4. [Commands](#commands)
 
 ### Features
+* Ready to use [blank starter theme](https://github.com/hayes0724/packer-blank-theme)
 * Webpack 4
 * Stylelint
 * ESLint
@@ -39,7 +50,7 @@ Webpack will create the following snippets that load all style and script chunks
 ### Creating chunks
 
 The system will check for any script or style sheet that matches Shopify template and layout files.
- 
+
 filename: `scripts/templates/product.js`
 
 creates file: `assets/template.product.js`
@@ -68,6 +79,10 @@ Build - Builds js/scss in production mode
 
 `npm run build`
 
+Deploy - Deploys the contents of dist folder
+
+`npm run deploy`
+
 Test - Runs all tests and code linters
 
 `npm run test`
@@ -91,7 +106,7 @@ Fix jS - Checks js for errors and best practices. Automatically fixes simple err
 
 ## Linting
 
-This project uses stylelint and eslint for checking css and js. 
+This project uses stylelint and eslint for checking css and js.
 
 
 ![linter](https://github.com/stylelint/stylelint/raw/master/example.png?raw=true)

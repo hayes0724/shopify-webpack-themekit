@@ -1,4 +1,15 @@
 {
-  "presets": ["@shopify/babel-preset"],
-  "plugins": ["transform-async-to-generator"]
+  "presets": [
+    ["@shopify/babel-preset/web", {
+      "browsers": [
+        "last 3 versions"
+      ],
+      "modules": false
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-async-to-generator",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
 }

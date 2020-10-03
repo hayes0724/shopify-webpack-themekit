@@ -1,19 +1,15 @@
-/*================ Styles ================*/
-import '../../styles/theme.scss';
-import '../../styles/theme.scss.liquid';
+/**
+ * Theme Layout Script
+ * ------------------------------------------------------------------------------
+ * A file that contains scripts and styles for all pages.
+ *
+ * @namespace theme
+ * @file vendors@layout.theme.css.liquid
+ * @file vendors@layout.theme.js
+ * @file layout.theme.css.liquid
+ * @file layout.theme.js
+ *
+ */
 
-/*================ Scripts ===============*/
-
-// Lazysizes
-import 'lazysizes/plugins/object-fit/ls.object-fit';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import 'lazysizes/plugins/rias/ls.rias';
-import 'lazysizes/plugins/bgset/ls.bgset';
-import 'lazysizes';
-import 'lazysizes/plugins/respimg/ls.respimg';
-import 'lazysizes/plugins/blur-up/ls.blur-up';
-
-// jQuery
-import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
+import "../../styles/theme.scss";
+import "../../styles/theme.scss.liquid";
